@@ -10,6 +10,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -59,6 +60,14 @@ public class GamTiledScratch extends ApplicationAdapter {
         renderer = new OrthogonalTiledMapRenderer(GameMap);
         CollisionDetection = new ArrayList<Rectangle>();
 
+        /*for(int i =0; i < 20; i++){
+            for(int j=0; j< 20; j++){
+                TiledMapTileLayer current = (TiledMapTileLayer)GameMap.getLayers().get(1);
+                //Cell cell = new TiledMapTileLayer.Cell;
+                TiledMapTileLayer.Cell cell = new TiledMapTileLayer.Cell();
+            }
+        }*/
+
 
         //Setting Up Orthographic Camera
         cam = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -105,6 +114,7 @@ public class GamTiledScratch extends ApplicationAdapter {
         batch.setProjectionMatrix(cam.combined);
         cam.update();
 
+        //Draw Sprites
         batch.begin();
         //batch.draw(BackGround, 0, 0);
         batch.draw(CurrentFrame, (int) SpriteX, (int) SpriteY);
