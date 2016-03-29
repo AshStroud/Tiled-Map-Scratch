@@ -25,7 +25,7 @@ public class GamTiledScratch extends ApplicationAdapter {
     private static final int nCols = 4;
     private static final int nRows = 4;
 
-    SpriteBatch batch;
+    SpriteBatch SbBatch;
     Texture txSprite;
     //Texture BackGround;
     TextureRegion[] trFrames;
@@ -46,7 +46,7 @@ public class GamTiledScratch extends ApplicationAdapter {
 
     @Override
     public void create() {
-        batch = new SpriteBatch();
+        SbBatch = new SpriteBatch();
         //BackGround = new Texture(Gdx.files.internal("lostwoods2.jpg"));
         txSprite = new Texture(Gdx.files.internal("CinderellaSpriteSheet.png"));
         TextureRegion[][] tmp = TextureRegion.split(txSprite, txSprite.getWidth() / nCols, txSprite.getHeight() / nRows);
@@ -104,14 +104,14 @@ public class GamTiledScratch extends ApplicationAdapter {
 
         //OrthoGraphic Camera
         OcCam.position.set(fSpriteX, fSpriteY, 0);
-        batch.setProjectionMatrix(OcCam.combined);
+        SbBatch.setProjectionMatrix(OcCam.combined);
         OcCam.update();
 
         //Draw Sprites
-        batch.begin();
+        SbBatch.begin();
         //batch.draw(BackGround, 0, 0);
-        batch.draw(CurrentFrame, (int) fSpriteX, (int) fSpriteY);
-        batch.end();
+        SbBatch.draw(CurrentFrame, (int) fSpriteX, (int) fSpriteY);
+        SbBatch.end();
     }
 
 }
