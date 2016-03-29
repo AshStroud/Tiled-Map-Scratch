@@ -17,6 +17,11 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
 
+//Sources:
+//Orthographic Camera: https://www.youtube.com/watch?v=ikajOOa4EPI
+//Tiled and Rendering TiledMap: http://gamedevelopment.tutsplus.com/tutorials/introduction-to-tiled-map-editor-a-great-platform-agnostic-tool-for-making-level-maps--gamedev-2838
+//                              https://www.youtube.com/watch?v=MT5YwZsQnF8
+
 public class GamTiledScratch extends ApplicationAdapter {
     private static final int COLS = 4;
     private static final int ROWS = 4;
@@ -104,8 +109,6 @@ public class GamTiledScratch extends ApplicationAdapter {
         }
 
         //Rendering Tiled Map
-        //renderer.setView();
-        //renderer.setView(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         renderer.setView(cam);
         renderer.render();
 
